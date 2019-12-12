@@ -56,7 +56,7 @@ class GameScene: SKScene {
         snowman.zPosition = 2
         snowman.physicsBody?.allowsRotation = false
         addChild(snowman)
-        let jump = SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 3), SKAction.move(by: CGVector(dx: 0, dy: 200), duration: 0.1)]))
+        let jump = SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 3), SKAction.applyForce(CGVector(dx: 0, dy: 3000), duration: 0.1)]))
         snowman.run(jump)
         
         
@@ -68,6 +68,10 @@ class GameScene: SKScene {
         addChild(arm)
         let spin = SKAction.repeatForever(SKAction.rotate(byAngle: -360, duration: 1))
         arm.run(spin)
+        let trackingSnowmanMovement = SKAction.repeatForever(SKAction.run {
+                   arm.position = CGPoint(x: snowman.position.x + 20, y: snowman.position.y + 65)
+               })
+        arm.run(trackingSnowmanMovement)
         
         let backArm = SKSpriteNode(imageNamed: "Stick Arm")
         backArm.anchorPoint = CGPoint(x: 1, y: 0.5)
