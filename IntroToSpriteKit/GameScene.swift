@@ -56,6 +56,9 @@ class GameScene: SKScene {
         snowman.zPosition = 2
         snowman.physicsBody?.allowsRotation = false
         addChild(snowman)
+        let jump = SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 3), SKAction.move(by: CGVector(dx: 0, dy: 200), duration: 0.1)]))
+        snowman.run(jump)
+        
         
         let arm = SKSpriteNode(imageNamed: "Stick Arm")
         arm.anchorPoint = CGPoint(x: 1, y: 0.5)
