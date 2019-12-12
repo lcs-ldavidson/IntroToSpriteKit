@@ -59,7 +59,22 @@ class GameScene: SKScene {
         
         let arm = SKSpriteNode(imageNamed: "Stick Arm")
         arm.anchorPoint = CGPoint(x: 1, y: 0.5)
-
+        arm.run(SKAction.scale(by: 0.025, duration: 0))
+        arm.position = CGPoint(x: snowman.position.x + 20, y: snowman.position.y + 65)
+        arm.zPosition = 3
+        addChild(arm)
+        let spin = SKAction.repeatForever(SKAction.rotate(byAngle: -360, duration: 1))
+        arm.run(spin)
+        
+        let backArm = SKSpriteNode(imageNamed: "Stick Arm")
+        backArm.anchorPoint = CGPoint(x: 1, y: 0.5)
+        backArm.run(SKAction.scale(by: 0.025, duration: 0))
+        backArm.position = CGPoint(x: snowman.position.x - 30, y: snowman.position.y + 80)
+        backArm.zPosition = 1
+        addChild(backArm)
+        let backSpin = SKAction.sequence([SKAction.wait(forDuration: 0.5), spin])
+        backArm.run(backSpin)
+        
         view.showsPhysics = true
     }
     
