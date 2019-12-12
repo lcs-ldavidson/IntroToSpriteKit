@@ -34,7 +34,33 @@ class GameScene: SKScene {
         } catch {
             // Do nothing if the sound file could not be played
         }
+        //adding background
+        let background = SKSpriteNode(imageNamed: "Background")
+        background.scale(to: CGSize(width: self.size.width, height: self.size.height))
+        background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        background.zPosition = -10
+        self.addChild(background)
+        
+        let ground = SKSpriteNode(imageNamed: "snow terrain")
+        ground.scale(to: CGSize(width: self.size.width, height: 100))
+        ground.physicsBody = SKPhysicsBody(texture: ground.texture!, size: ground.size)
+        ground.position = CGPoint(x: size.width/2, y: 50)
+        ground.zPosition = 10
+        ground.physicsBody?.isDynamic = false
+        addChild(ground)
+        
+        let snowman = SKSpriteNode(imageNamed: "Snowman")
+        snowman.scale(to: CGSize(width: snowman.size.width / 3, height: snowman.size.height / 3))
+        snowman.physicsBody = SKPhysicsBody(texture: snowman.texture!, size: snowman.size)
+        snowman.position = CGPoint(x: 600, y: 100)
+        snowman.zPosition = 2
+        snowman.physicsBody?.allowsRotation = false
+        addChild(snowman)
+        
+        let arm = SKSpriteNode(imageNamed: "Stick Arm")
+        arm.anchorPoint = CGPoint(x: 1, y: 0.5)
 
+        view.showsPhysics = true
     }
     
     // This runs before each frame is rendered
