@@ -14,6 +14,7 @@
 		8127943F239BEC4C000EBED0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127943E239BEC4C000EBED0 /* ViewController.swift */; };
 		81279441239BEC4D000EBED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81279440239BEC4D000EBED0 /* Assets.xcassets */; };
 		81279444239BEC4D000EBED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81279442239BEC4D000EBED0 /* Main.storyboard */; };
+		9E5F190323A577D300CA1365 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E5F190223A577D300CA1365 /* MyParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		81279445239BEC4D000EBED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81279446239BEC4D000EBED0 /* IntroToSpriteKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntroToSpriteKit.entitlements; sourceTree = "<group>"; };
 		8127944C239BEC6A000EBED0 /* IntroToSpriteKit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IntroToSpriteKit.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E5F190223A577D300CA1365 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				81279446239BEC4D000EBED0 /* IntroToSpriteKit.entitlements */,
 				0E0C826423A16E0600DC5990 /* sleigh-bells-excerpt.mp3 */,
 				0EF3302923A0433100A83858 /* Fire.sks */,
+				9E5F190223A577D300CA1365 /* MyParticle.sks */,
 			);
 			path = IntroToSpriteKit;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 				0E0C826523A16E0600DC5990 /* sleigh-bells-excerpt.mp3 in Resources */,
 				81279441239BEC4D000EBED0 /* Assets.xcassets in Resources */,
 				81279444239BEC4D000EBED0 /* Main.storyboard in Resources */,
+				9E5F190323A577D300CA1365 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

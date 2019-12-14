@@ -41,10 +41,24 @@ class GameScene: SKScene {
         background.zPosition = -10
         self.addChild(background)
         
+        let snow = SKEmitterNode(fileNamed: "MyParticle")
+        snow?.advanceSimulationTime(10)
+        snow?.particlePosition = CGPoint(x: size.width / 2, y: size.height)
+        snow?.zPosition = 9
+        addChild(snow!)
+        snow?.advanceSimulationTime(10)
+        
         let message = SKSpriteNode(imageNamed: "merryChristmas")
         message.position = CGPoint(x: 200, y: 400)
         message.zPosition = -8
         addChild(message)
+        
+        let credits = SKSpriteNode(imageNamed: "credit")
+        credits.position = CGPoint(x: 200, y: 280)
+        credits.zPosition = -7
+        let creditScaleFactor = CGFloat(0.3)
+        credits.scale(to: CGSize(width: credits.size.width * creditScaleFactor, height: credits.size.height * creditScaleFactor))
+        addChild(credits)
         
         
         let ground = SKSpriteNode(imageNamed: "snow terrain")
@@ -101,7 +115,7 @@ class GameScene: SKScene {
         let waitTime = SKAction.wait(forDuration: 3.0)
         let throwPoint = CGPoint(x: 550, y: 220)
         let actualThrow = SKAction.run {
-            self.throwSnowball(throwFrom: throwPoint, withVelocity: CGVector(dx: -100000, dy: CGFloat.random(in: (1...90000))))
+            self.throwSnowball(throwFrom: throwPoint, withVelocity: CGVector(dx: -100000, dy: CGFloat.random(in: (1...70000))))
         }
         let timedThrows = SKAction.sequence([SKAction.wait(forDuration: 0.25), actualThrow])
         let throwSequence = SKAction.sequence([waitTime, SKAction.repeatForever(timedThrows)])
